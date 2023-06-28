@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_clone/presentation/main/widgets/custom_button_widget.dart';
+import 'package:netflix_clone/presentation/home/widgets/custom_button_widget.dart';
 import 'package:netflix_clone/util/constant.dart';
 
 class BannerCard extends StatelessWidget {
-  const BannerCard({super.key});
+  const BannerCard({super.key, required this.posterPath, required this.id});
+  final String posterPath;
+  final int? id;
 
   @override
   Widget build(BuildContext context) {
@@ -12,8 +14,8 @@ class BannerCard extends StatelessWidget {
         Container(
           width: double.infinity,
           height: 600,
-          decoration: const BoxDecoration(
-            image: DecorationImage(image: NetworkImage(mainScrenImage)),
+          decoration: BoxDecoration(
+            image: DecorationImage(image: NetworkImage(posterPath)),
           ),
           foregroundDecoration: const BoxDecoration(
               gradient: LinearGradient(
@@ -36,14 +38,16 @@ class BannerCard extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                const CustomButtonWidget(
+                CustomButtonWidget(
                   icon: Icons.add,
                   title: "My List",
+                  id: id,
                 ),
                 _playButton(),
-                const CustomButtonWidget(
+                CustomButtonWidget(
                   icon: Icons.info,
                   title: "More",
+                  id: id,
                 ),
               ],
             ),

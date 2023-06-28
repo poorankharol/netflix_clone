@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_clone/presentation/main/main_screen.dart';
+
+import '../../home/main_screen.dart';
 
 class SignUpButton extends StatelessWidget {
   const SignUpButton({super.key});
