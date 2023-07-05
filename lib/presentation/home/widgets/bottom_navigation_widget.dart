@@ -31,11 +31,11 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
               icon: Icon(Icons.collections),
               label: 'New & Hot',
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.emoji_emotions),
-              label: 'Fast Laugh',
-            ),
-            BottomNavigationBarItem(icon: Icon(Icons.download), label: 'Downloads'),
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.emoji_emotions),
+            //   label: 'Fast Laugh',
+            // ),
+            // BottomNavigationBarItem(icon: Icon(Icons.download), label: 'Downloads'),
           ],
           currentIndex: value,
           onTap: (index) {

@@ -56,36 +56,36 @@ class Dates {
 }
 
 class Results {
-  bool? adult;
-  String? backdropPath;
-  List<int?>? genreIds;
-  int? id;
-  String? originalLanguage;
-  String? originalTitle;
-  String? overview;
-  double? popularity;
-  String? posterPath;
-  String? releaseDate;
-  String? title;
-  bool? video;
-  double? voteAverage;
-  int? voteCount;
+  late bool adult;
+  late String backdropPath;
+  late List<int> genreIds;
+  late int id;
+  late String originalLanguage;
+  late String originalTitle;
+  late String overview;
+  late double popularity;
+  late String posterPath;
+  late String releaseDate;
+  late String title;
+  late bool video;
+  late double voteAverage;
+  late int voteCount;
 
   Results(
-      {adult,
-      backdropPath,
-      genreIds,
-      id,
-      originalLanguage,
-      originalTitle,
-      overview,
-      popularity,
-      posterPath,
-      releaseDate,
-      title,
-      video,
-      voteAverage,
-      voteCount});
+      {required adult,
+      required backdropPath,
+      required genreIds,
+      required id,
+      required originalLanguage,
+      required originalTitle,
+      required overview,
+      required popularity,
+      required posterPath,
+      required releaseDate,
+      required title,
+      required video,
+      required voteAverage,
+      required voteCount});
 
   Results.fromJson(Map<String, dynamic> json) {
     //adult = json['adult'];

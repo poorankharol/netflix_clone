@@ -6,7 +6,6 @@ import 'package:stack_trace/stack_trace.dart' as stack_trace;
 
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  //await configureInjection();
   runApp(const ProviderScope(child: MyApp()));
   FlutterError.demangleStackTrace = (StackTrace stack) {
     if (stack is stack_trace.Trace) return stack.vmTrace;

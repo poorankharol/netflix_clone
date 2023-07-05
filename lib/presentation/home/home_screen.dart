@@ -45,7 +45,7 @@ class HomeScreen extends ConsumerWidget {
         children: [
           ListView(
             children: [
-              isLoading
+              listOfNowPlayingIds.isEmpty
                   ? const Center(
                       child: CircularProgressIndicator(
                         color: Colors.red,
@@ -53,7 +53,9 @@ class HomeScreen extends ConsumerWidget {
                     )
                   : BannerCard(
                       posterPath:
-                          '${Endpoints.posterPath}${listOfNowPlaying[0]}',id: listOfNowPlayingIds[0]),
+                          '${Endpoints.posterPath}${listOfNowPlaying[0]}' ?? "",
+                      id: listOfNowPlayingIds[0] ?? 0,
+                    ),
               const SizedBox(
                 height: 15,
               ),

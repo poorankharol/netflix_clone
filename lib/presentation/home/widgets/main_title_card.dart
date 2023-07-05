@@ -33,7 +33,10 @@ class MainTitleCard extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             children: List.generate(
               posterList.length,
-              (index) => MainCard(imageUrl: posterList[index]!, id: id[index]!),
+              (index) => Hero(
+                tag: id[index]!,
+                child: MainCard(imageUrl: posterList[index]!, id: id[index]!),
+              ),
             ),
           ),
         )

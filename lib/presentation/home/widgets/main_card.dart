@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_clone/presentation/details/appbar.dart';
 import 'package:netflix_clone/presentation/details/movie_detail.dart';
+import 'package:netflix_clone/presentation/details/movie_detail_silver_bar.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class MainCard extends StatelessWidget {
   final String imageUrl;
+
   const MainCard({
     Key? key,
     required this.imageUrl,
     required this.id,
   }) : super(key: key);
   final int id;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,14 +30,17 @@ class MainCard extends StatelessWidget {
             ),
           );
         },
-        child: Container(
-          width: 130,
-          height: 250,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
-            image: DecorationImage(
-              fit: BoxFit.fill,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(5),
+          child: SizedBox(
+            width: 130,
+            height: 250,
+            child: FadeInImage(
+              placeholder: MemoryImage(kTransparentImage),
               image: NetworkImage(imageUrl),
+              width: 130,
+              height: 250,
+              fit: BoxFit.fill,
             ),
           ),
         ),

@@ -38,12 +38,12 @@ class BannerCard extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                CustomButtonWidget(
-                  icon: Icons.add,
-                  title: "My List",
-                  id: id,
-                ),
-                _playButton(),
+                // CustomButtonWidget(
+                //   icon: Icons.add,
+                //   title: "My List",
+                //   id: id,
+                // ),
+                //_playButton(),
                 CustomButtonWidget(
                   icon: Icons.info,
                   title: "More",
