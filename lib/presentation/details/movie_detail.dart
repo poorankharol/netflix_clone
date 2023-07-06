@@ -24,7 +24,7 @@ class MovieDetailScreen extends ConsumerWidget {
             (BuildContext context, AsyncSnapshot<MovieDetails> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(color: Colors.red),
             );
           }
           if (snapshot.hasError) {

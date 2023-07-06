@@ -4,6 +4,7 @@ class Endpoints {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNjRlZTRkMjljMGY0ZWI4NmJkYzQ4Y2RjMTUyNjRiZCIsInN1YiI6IjY0OTlhNDQ4YjM0NDA5MDBlMjcyZjg2NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0d-mfHsAQWZa_XVfZ5KUPL74s7Ep2qOH-Hmd11wGg00";
   static const nowPlaying = "now_playing?language=en-US&page=1";
   static const topRated = "top_rated?language=en-US&page=1";
+  static const comingSoon = "upcoming?language=en-US";
   static const details = "";
 
   // receiveTimeout

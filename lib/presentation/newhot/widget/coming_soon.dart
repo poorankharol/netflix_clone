@@ -1,45 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:netflix_clone/presentation/newhot/provider/coming_soon_provider.dart';
+import 'package:netflix_clone/presentation/newhot/widget/coming_soon_item.dart';
 
-class ComingSoon extends StatelessWidget {
+class ComingSoon extends ConsumerWidget {
   const ComingSoon({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 20,horizontal: 10),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Jul",
-                style: TextStyle(color: Colors.white, fontSize: 22),
-              ),
-              Text(
-                "15",
-                style: TextStyle(color: Colors.white, fontSize: 40),
-              ),
-            ],
-          ),
-          Container(
-            margin: const EdgeInsets.only(left: 15),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image(
-                image: const NetworkImage(
-                    'https://www.simplil'
-                        'earn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg'),
-                fit: BoxFit.cover,
-                width: width - 70,
-                height: 180,
-              ),
-            ),
-          )
-        ],
-      ),
+  Widget build(BuildContext context, WidgetRef ref) {
+    final data = ref.watch(totalCountProvider);
+    return Scaffold(
+      body: data.when(data: (data) {
+        return ListView.builder(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 0),
+            itemCount: data,
+            itemBuilder: (_, index) {
+              return ProviderScope(
+                  overrides: [listIndexProvider.overrideWith((_) => index)],
+                  child: const ComingSoonItem());
+            });
+      }, error: (error, s) {
+        return Text(
+          "$error\n$s",
+          style: const TextStyle(color: Colors.white),
+        );
+      }, loading: () {
+        return null;
+      }),
     );
   }
 }

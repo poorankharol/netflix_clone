@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         appBarTheme: const AppBarTheme(backgroundColor: Colors.black),
         scaffoldBackgroundColor: Colors.black,
-        fontFamily: GoogleFonts.bebasNeue().fontFamily,
+        fontFamily: GoogleFonts.ysabeau().fontFamily,
       ),
       home: const SplashScreen(),
     );

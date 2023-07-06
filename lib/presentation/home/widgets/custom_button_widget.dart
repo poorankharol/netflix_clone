@@ -4,16 +4,32 @@ import '../../details/movie_detail.dart';
 
 class CustomButtonWidget extends StatelessWidget {
   const CustomButtonWidget(
-      {super.key, required this.icon, required this.title, required this.id});
+      {Key? key,
+      required this.icon,
+      required this.title,
+      this.iconSize = 25,
+      this.textSize = 18,
+      this.letterSpacingtext = 0,
+      this.id,
+      required this.onTapped})
+      : super(key: key);
 
+  final int? id;
   final IconData icon;
   final String title;
-  final int? id;
+  final double iconSize;
+  final double textSize;
+  final double letterSpacingtext;
+  final void Function() onTapped;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onTap: () {
+        if (id == null) {
+          onTapped();
+          return;
+        }
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -30,9 +46,15 @@ class CustomButtonWidget extends StatelessWidget {
             color: Colors.white,
             size: 25,
           ),
+          const SizedBox(
+            height: 5,
+          ),
           Text(
             title,
-            style: const TextStyle(color: Colors.white, fontSize: 18,letterSpacing: 0),
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: textSize,
+                letterSpacing: letterSpacingtext),
           ),
         ],
       ),

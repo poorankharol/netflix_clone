@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_clone/presentation/home/widgets/custom_button_widget.dart';
-import 'package:netflix_clone/util/constant.dart';
 
 class BannerCard extends StatelessWidget {
   const BannerCard({super.key, required this.posterPath, required this.id});
@@ -48,6 +47,7 @@ class BannerCard extends StatelessWidget {
                   icon: Icons.info,
                   title: "More",
                   id: id,
+                  onTapped: () {},
                 ),
               ],
             ),
