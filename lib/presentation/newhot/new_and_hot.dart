@@ -17,16 +17,16 @@ class NewAndHotScreen extends StatelessWidget {
               "New & Hot",
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.normal),
             ),
-            actions: const [
-              Icon(
-                Icons.search,
-                size: 30,
-                color: Colors.white,
-              ),
-              SizedBox(
-                width: 15,
-              ),
-            ],
+            // actions: const [
+            //   Icon(
+            //     Icons.search,
+            //     size: 30,
+            //     color: Colors.white,
+            //   ),
+            //   SizedBox(
+            //     width: 15,
+            //   ),
+            // ],
             bottom: TabBar(
               labelColor: Colors.black,
               isScrollable: true,
@@ -50,10 +50,12 @@ class NewAndHotScreen extends StatelessWidget {
             ),
           ),
         ),
-        body: const TabBarView(children: [
-          ComingSoon(),
-          ComingSoon(),
-        ],),
+        body: TabBarView(
+          children: [
+            const ComingSoon(),
+            Container(),
+          ],
+        ),
       ),
     );
   }

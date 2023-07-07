@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:netflix_clone/model/now_playing/now_playing.dart';
 import 'package:netflix_clone/presentation/home/provider/now_playing/now_playing_provider.dart';
 import 'package:netflix_clone/presentation/home/provider/top_rated/top_rated_provider.dart';
 import 'package:netflix_clone/presentation/home/widgets/banner_card.dart';
@@ -103,23 +102,23 @@ class HomeScreen extends ConsumerWidget {
                       width: 60,
                       height: 60,
                     ),
-                    const Spacer(),
-                    const Icon(
-                      Icons.search,
-                      size: 30,
-                      color: Colors.white,
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    const Icon(
-                      Icons.account_box,
-                      color: Colors.white,
-                      size: 30,
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
+                    // const Spacer(),
+                    // const Icon(
+                    //   Icons.search,
+                    //   size: 30,
+                    //   color: Colors.white,
+                    // ),
+                    // const SizedBox(
+                    //   width: 10,
+                    // ),
+                    // const Icon(
+                    //   Icons.account_box,
+                    //   color: Colors.white,
+                    //   size: 30,
+                    // ),
+                    // const SizedBox(
+                    //   width: 10,
+                    // ),
                   ],
                 ),
                 const Row(
